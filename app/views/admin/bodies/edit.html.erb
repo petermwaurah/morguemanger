@@ -1,0 +1,45 @@
+<h2>Add Edit Body</h2>
+
+<%= form_for [:admin, @body] do |f| %>
+
+	<% if @body.errors.any? %>
+	     <% @body.errors.full_messages.each do |msg|%>
+	        <div class="alert alert-danger"><%= msg %></div>
+	     <% end %>
+	<% end %>
+	
+	<div class="form-group">
+	   <%= f.label :name %>
+	    <%= f.text_field :name, class:'form-control' %> 
+	</div>
+	<div class="form-group">
+	   <%= f.label :body_number %>
+	    <%= f.text_field :body_number, class:'form-control' %> 
+	</div>
+	<div class="form-group">
+	   <%= f.label :cause_of_death %>
+	    <%= f.text_field :cause_of_death, class:'form-control' %> 
+	</div>
+	<div class="form-group">
+	   <%= f.label :date_of_birth %>
+	    <%= f.date_field :date_of_birth, class:'form-control' %> 
+	</div>
+	<div class="form-group">
+	   <%= f.label :date_of_death %>
+	    <%= f.date_field :date_of_death, class:'form-control' %> 
+	</div>
+	<div class="form-group">
+	   <%= f.label :deceased_prior_address %>
+	    <%= f.text_field :deceased_prior_address, class:'form-control' %> 
+	</div>
+	<div class="form-group">
+	   <%= f.label :health_history %>
+	    <%= f.text_field :health_history, class:'form-control' %> 
+	</div>
+	
+	
+	</div>
+
+	<%= f.submit "Submit", class:'btn btn-primary' %>
+	<%= link_to "Cancel", admin_bodies_path, class:'btn btn-default' %>
+<% end %>	     
